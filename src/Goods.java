@@ -1,6 +1,5 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Iterator;
 
 public class Goods implements Comparable<Goods>{
     static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -33,4 +32,8 @@ public class Goods implements Comparable<Goods>{
         }
     }
     
+    @Override
+    public String toString() {
+        return "生产日期为:" + this.getDate();
+    }
 }
