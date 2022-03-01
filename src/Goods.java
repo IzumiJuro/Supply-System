@@ -1,10 +1,7 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
-public class Goods implements Comparable<Goods>{
-    static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+public class Goods {
     public String date;
     
+    //构造方法
     public Goods(String date) {
         this.date = date;
     }
@@ -12,26 +9,16 @@ public class Goods implements Comparable<Goods>{
     public Goods() {
     
     }
-    
-    
-    
+    // 获得商品日期
     public String getDate() {
         return date;
     }
-    
+    // 设置商品日期
     public void setDate(String date) {
         this.date = date;
     }
     
-    @Override
-    public int compareTo(Goods o) {
-        try {
-            return formatter.parse(o.getDate()).compareTo(formatter.parse(this.getDate()));
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    
+    // 重写了商品的输出形式
     @Override
     public String toString() {
         return "生产日期为:" + this.getDate();
